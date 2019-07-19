@@ -5,14 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="main.js"></script>
+    <link href="/d3-geomap/d3-geomap.css" rel="stylesheet">
     <title>PerfTemp</title>
 </head>
 <body>
     <h3>Today is a beautiful day!!</h3>
+    <div id="map">
         <svg >
           
         </svg>
-        <button id="btn">Show Message</button>
+
+    </div>
+
+<!--    
+    <script src="//unpkg.com/d3@5.9.2/dist/d3.min.js"></script>
+    <script src="//unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>
+    <script src="/d3-geomap/d3-geomap.min.js"></script> -->
+    <script>
+     var map = d3.geomap()
+            .geofile( '/d3-geomap/topojson/world/countries.json' )
+            .draw( d3.select( '#map' ) );
+    </script>
+        <!-- <button id="btn">Show Message</button> -->
     <!-- <script>    
         var fruits = ['apple', 'mango', 'banana', 'orange']; 
         d3.select( 'ul' ).selectAll( 'li' ).data( fruits ).enter().append( 'li' ).text( function ( d ) { return d; } );
