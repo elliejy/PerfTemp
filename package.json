@@ -1,0 +1,25 @@
+{
+  "name": "perftemp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "d3.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --mode=development --watch",
+    "server": "nodemon -w server.js server.js"
+  },
+  "keywords": [
+    "d3"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "d3": "^5.9.7",
+    "d3-geo": "^1.11.6",
+    "express": "^4.17.1",
+    "webpack": "^4.36.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.6"
+  }
+}
