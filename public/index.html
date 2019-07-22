@@ -7,17 +7,32 @@
     <link rel="stylesheet" href="/style.css">
     <title>PerfTemp</title>
 </head>
-<body>
-    <h3>Today is a beautiful day!!</h3>
-    <div id="map">
-        <svg width="960" height="600"></svg>
-    </div>
-
-    
+<body >What temperature do you want to travel to?</h3>
+    <br>
+    <form method="get">
+    Temperature: <input type="text" placeholder="Enter a temperature" name="temperature">
+    °C<input type="radio" name="unit" value="celcius">
+    °F<input type="radio" name="unit" value="fahrenheit">
+    Month:
+    <select name="month">
+        <option value="January">January</option>
+        <option value="February">February</option>
+        <option value="March">March</option>
+        <option value="April">April</option>
+        <option value="May">May</option>
+        <option value="June">June</option>
+        <option value="July">July</option>
+        <option value="August">August</option>
+        <option value="September">September</option>
+        <option value="October">October</option>
+        <option value="November">November</option>
+        <option value="December">December</option>
+    </select>
+    <input type="submit" value="Submit">
+    </form>
     <script src="main.js"></script>
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="//d3js.org/topojson.v2.min.js"></script>
-    
     <script>
       
     </script>
