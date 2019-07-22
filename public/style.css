@@ -12,19 +12,26 @@ ul {
   top: 0;
   right: 100px;
 }
-.land :hover {
+/* .land :hover {
   fill: plum;
+} */
+div.tooltip {	
+    position: absolute;			
+    text-align: center;			
+    width: 90px;									
+    padding: 7px;				
+    font: 14px sans-serif;		
+    background: plum;	
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;			
 }
-.cities{
-  display: flex;
-  flex-direction: column;
-}
-.labels {
-  margin: 0 20px 20px -20px;
-  padding: 10px;
+
+.circle {
+  position: relative;
 }
 .boundary-borders {
-  fill: none;
+  fill: cornflowerblue;
   stroke: #fff;
   stroke-width: 0.5px;
   stroke-linejoin: round;
@@ -34,6 +41,7 @@ ul {
 .land{
     width: 600px;
     height: 960px;
+    fill: cornflowerblue;
 }
 
 .d3-geomap text {
