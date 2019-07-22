@@ -4,18 +4,13 @@ import { select } from "d3-selection";
 import { draw, csv, geoEquirectangular, geoPath, event} from 'd3';
 import queryString from 'query-string';
 
-
-// csv( "/WeatherData.csv").then((d) => {
-//     // console.log( d[0] )
-// });
-
 document.addEventListener( 'DOMContentLoaded', ()=> {
 
 var width = 1060,
     height = 600;
 
-    var projection = geoEquirectangular()
-   .scale(178 )
+var projection = geoEquirectangular()
+    .scale(168 )
     .translate( [width / 2, height / 2] )
     .precision( .1 );
 
@@ -72,7 +67,7 @@ d3.json(url, function ( error, world ) {
                 }
                 if (cityName) {
                     const li = document.createElement( "li" )
-                    li.appendChild( document.createTextNode( d.properties.name + "[" +cityTemp+"]" ) );
+                    li.appendChild( document.createTextNode( d.properties.name + "   [" + cityTemp +"°]" ) );
                     cityList.append( li );
                 }
             }
@@ -125,10 +120,23 @@ d3.json(url, function ( error, world ) {
             return projection( d.geometry.coordinates )[1]
         } )
         .on( "mouseover", function ( d ) {
+            let highTemp = null;
+            let lowTemp = null;
+            const tempData = temp.filter( city => city.City === d.properties.name )
+             let city = tempData[0]
+            if ( query.unit === 'celcius' ) {
+                
+                lowTemp = city.LowC;
+                highTemp = city.HighC;
+            } else {
+                
+                lowTemp = city.LowF;
+                highTemp = city.HighF;
+            }
             div.transition()
                 .duration( 200 )
                 .style( "opacity", .9 );
-            div.html( d.properties.name  )
+            div.html( d.properties.name + "<br></br>" + "High: " + highTemp + "°" + "<br></br>" + "Low: " + lowTemp + "°")
                 .style( "left", ( event.pageX ) + "px" )
                 .style( "top", ( event.pageY - 28 ) + "px" );
                
