@@ -3,11 +3,26 @@ path {
     width: 600px;
     height: 960px;
 }
-
-.path :hover {
-  fill: plum;
+body {
+  position: relative;
 }
 
+ul {
+  position: absolute;
+  top: 0;
+  right: 100px;
+}
+.land :hover {
+  fill: plum;
+}
+.cities{
+  display: flex;
+  flex-direction: column;
+}
+.labels {
+  margin: 0 20px 20px -20px;
+  padding: 10px;
+}
 .boundary-borders {
   fill: none;
   stroke: #fff;
