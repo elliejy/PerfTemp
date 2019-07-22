@@ -122,21 +122,23 @@ d3.json(url, function ( error, world ) {
         .on( "mouseover", function ( d ) {
             let highTemp = null;
             let lowTemp = null;
+            let cityName = null;
             const tempData = temp.filter( city => city.City === d.properties.name )
-             let city = tempData[0]
+            const cityMonth = tempData.filter( city => city.Month === query.month )
+             let city = cityMonth[0]
             if ( query.unit === 'celcius' ) {
-                
+                cityName = city.City
                 lowTemp = city.LowC;
                 highTemp = city.HighC;
-            } else {
-                
+            } else if ( query.unit === 'fahrenheit' ) {
+                cityName = city.City
                 lowTemp = city.LowF;
                 highTemp = city.HighF;
             }
             div.transition()
                 .duration( 200 )
                 .style( "opacity", .9 );
-            div.html( d.properties.name + "<br></br>" + "High: " + highTemp + "°" + "<br></br>" + "Low: " + lowTemp + "°")
+            div.html( cityName + "<br></br>" + "High: " + highTemp + "°" + "<br></br>" + "Low: " + lowTemp + "°")
                 .style( "left", ( event.pageX ) + "px" )
                 .style( "top", ( event.pageY - 28 ) + "px" );
                
