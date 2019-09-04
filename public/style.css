@@ -5,12 +5,22 @@ path {
 }
 body {
   position: relative;
+  left: 2vw;
 }
-
+main{
+  width: 80vw;
+  margin: auto;
+}
+form {
+  width: 80%;
+  margin: auto;
+}
 ul {
   position: absolute;
-  top: 0;
+  top: 5vh;
   right: 100px;
+  max-height: 80vh;
+  overflow: scroll;
 }
 /* .land :hover {
   fill: plum;
