@@ -15,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "css-loader": "^3.1.0",
+    "css-loader": "^6.7.3",
     "d3": "^5.9.7",
     "d3-geo": "^1.11.6",
     "d3-geo-projection": "^2.7.0",
@@ -25,11 +25,11 @@
     "json-loader": "^0.5.7",
     "node-fetch": "^2.6.0",
     "query-string": "^6.8.1",
-    "style-loader": "^0.23.1",
+    "style-loader": "^3.3.1",
     "topojson": "^3.0.2",
-    "webpack": "^4.36.1"
+    "webpack": "^5.75.0"
   },
   "devDependencies": {
-    "webpack-cli": "^3.3.6"
+    "webpack-cli": "^5.0.1"
   }
 }
